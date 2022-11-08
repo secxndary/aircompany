@@ -10,7 +10,8 @@ namespace AircompanyTests.Tests
     [TestFixture]
     public class AirportTest
     {
-        private List<Plane> planes = new List<Plane>(){
+        private List<Plane> planes = new List<Plane>()
+        {
            new PassengerPlane("Boeing-737", 900, 12000, 60500, 164),
            new PassengerPlane("Boeing-737-800", 940, 12300, 63870, 192),
            new PassengerPlane("Boeing-747", 980, 16100, 70500, 242),
@@ -33,11 +34,11 @@ namespace AircompanyTests.Tests
         public void MyTest1()
         {
             Airport airport = new Airport(planes);
-            List<MilitaryPlane> transportMilitaryPlanes = airport.GetTransportMilitaryPlanes().ToList();
+            List<MilitaryPlane> transportMilitaryPlanes = airport.GetMilitaryPlanesWithType(MilitaryType.TRANSPORT).ToList();
             bool hasMilitaryTransportPlane = false;
             foreach (MilitaryPlane militaryPlane in transportMilitaryPlanes)
             {
-                if ((militaryPlane.PlaneTypeIs() == MilitaryType.TRANSPORT))
+                if ((militaryPlane.Type == MilitaryType.TRANSPORT))
                 {
                     hasMilitaryTransportPlane = true;
                 }
@@ -57,19 +58,19 @@ namespace AircompanyTests.Tests
         {
             Airport airport = new Airport(planes);
             airport = airport.SortByMaxLoadCapacity();
-            List<Plane> planesSortedByMaxLoadCapacity = airport.GetPlanes().ToList();
+            List<Plane> planesSortedByMaxLoadCapacity = airport.Planes.ToList();
 
             bool nextPlaneMaxLoadCapacityIsHigherThanCurrent = true;
             for (int i = 0; i < planesSortedByMaxLoadCapacity.Count - 1; i++)
             {
                 Plane currentPlane = planesSortedByMaxLoadCapacity[i];
                 Plane nextPlane = planesSortedByMaxLoadCapacity[i + 1];
-                if (currentPlane.MAXLoadCapacity() > nextPlane.MAXLoadCapacity())
+                if (currentPlane.MaxLoadCapacity > nextPlane.MaxLoadCapacity)
                 {
                     nextPlaneMaxLoadCapacityIsHigherThanCurrent = false;
                 }
             }
-            Assert.That(nextPlaneMaxLoadCapacityIsHigherThanCurrent==true);
+            Assert.That(nextPlaneMaxLoadCapacityIsHigherThanCurrent == true);
         }
     }
 }
