@@ -9,6 +9,8 @@ namespace Aircompany.Planes
         private int _maxFlightDistance;
         private int _maxLoadCapacity;
 
+        public Plane() { }
+
         public Plane(string model, int maxSpeed, int maxFlightDistance, int maxLoadCapacity)
         {
             _model = model;
@@ -21,7 +23,6 @@ namespace Aircompany.Planes
         public int MaxSpeed => _maxSpeed;
         public int MaxFlightDistance => _maxFlightDistance;
         public int MaxLoadCapacity => _maxLoadCapacity;
-
 
         public override bool Equals(object obj)
         {

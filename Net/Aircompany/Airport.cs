@@ -11,8 +11,7 @@ namespace Aircompany
 
         public Airport(IEnumerable<Plane> planes) => _planes = planes.ToList();
 
-        public IEnumerable<Plane> Planes => _planes;
-
+        public List<Plane> Planes => _planes;
 
         public List<PassengerPlane> GetPassengerPlanes()
         {
@@ -47,13 +46,11 @@ namespace Aircompany
         public PassengerPlane GetPassengerPlaneWithMaxPassengersCapacity() =>
            GetPassengerPlanes().Aggregate((m, c) => m.PassengersCapacity > c.PassengersCapacity ? m : c);
 
-
         public Airport SortByMaxDistance() => new Airport(_planes.OrderBy(p => p.MaxFlightDistance));
 
         public Airport SortByMaxSpeed() => new Airport(_planes.OrderBy(p => p.MaxSpeed));
 
         public Airport SortByMaxLoadCapacity() => new Airport(_planes.OrderBy(p => p.MaxLoadCapacity));
-
 
         public override string ToString() => $"Airport: planes = {string.Join(", ", _planes.Select(x => x.Model))}\n";
     }

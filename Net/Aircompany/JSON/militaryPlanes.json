@@ -1,0 +1,44 @@
+[
+  {
+    "Type": 1,
+    "Model": "B-1B Lancer",
+    "MaxSpeed": 1050,
+    "MaxFlightDistance": 21000,
+    "MaxLoadCapacity": 80000
+  },
+  {
+    "Type": 1,
+    "Model": "B-2 Spirit",
+    "MaxSpeed": 1030,
+    "MaxFlightDistance": 22000,
+    "MaxLoadCapacity": 70000
+  },
+  {
+    "Type": 1,
+    "Model": "B-52 Stratofortress",
+    "MaxSpeed": 1000,
+    "MaxFlightDistance": 20000,
+    "MaxLoadCapacity": 80000
+  },
+  {
+    "Type": 0,
+    "Model": "F-15",
+    "MaxSpeed": 1500,
+    "MaxFlightDistance": 12000,
+    "MaxLoadCapacity": 10000
+  },
+  {
+    "Type": 0,
+    "Model": "F-22",
+    "MaxSpeed": 1550,
+    "MaxFlightDistance": 13000,
+    "MaxLoadCapacity": 11000
+  },
+  {
+    "Type": 2,
+    "Model": "C-130 Hercules",
+    "MaxSpeed": 650,
+    "MaxFlightDistance": 5000,
+    "MaxLoadCapacity": 110000
+  }
+]

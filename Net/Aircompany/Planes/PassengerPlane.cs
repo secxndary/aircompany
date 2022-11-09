@@ -9,7 +9,6 @@
 
         public int PassengersCapacity => _passengersCapacity;
 
-
         public override bool Equals(object obj)
         {
             var plane = obj as PassengerPlane;

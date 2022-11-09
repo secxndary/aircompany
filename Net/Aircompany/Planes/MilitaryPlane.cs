@@ -11,7 +11,6 @@ namespace Aircompany.Planes
 
         public MilitaryType Type => _type;
 
-
         public override bool Equals(object obj)
         {
             var plane = obj as MilitaryPlane;
